@@ -40,6 +40,13 @@ public final class Constants {
         public static final double LOWER_ARM_SPEED = -1;
     }
 
+    public final class kIntake {
+        // CAN IDs set from the REV Hardware Client
+        public static final int INTAKE_MOTOR = 6;
+        public static final double INTAKE_SPEED = 1;
+        public static final double EJECT_SPEED = -1;
+    }
+
     /**
      * These constants are for IO (Input Output) devices such as joysticks
      */

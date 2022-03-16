@@ -15,9 +15,12 @@ import frc.robot.Constants.kIO;
 import frc.robot.commands.TankDriveCommand;
 import frc.robot.commands.RaiseArmCommand;
 import frc.robot.commands.LowerArmCommand;
+import frc.robot.commands.IntakeCommand;
+import frc.robot.commands.EjectCommand;
 
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.ArmWench;
+import frc.robot.subsystems.Intake;
 
 /**
  * This class is where the bulk of the robot should be declared. Since
@@ -35,17 +38,22 @@ public class RobotContainer {
 
     private final JoystickButton button1 = new JoystickButton(leftJoy, 1);
     private final JoystickButton button2 = new JoystickButton(leftJoy, 2);
+    private final JoystickButton button3 = new JoystickButton(leftJoy, 3);
+    private final JoystickButton button4 = new JoystickButton(leftJoy, 4);
 
     // The robot's subsystems and commands are defined here...
     private final Drivetrain drivetrain = new Drivetrain();
     private final ArmWench armWench = new ArmWench();
+    private final Intake intake = new Intake();
     // Using a method reference to get the Y axis of the joystick.
     // Different from a normal method call because this sends "instructions" on how
     // to get the value, not the value itself.
     // This is needed to update the command with the joystick's current value.
     private final TankDriveCommand tankDriveCommand = new TankDriveCommand(drivetrain, leftJoy::getY, rightJoy::getY);
     private final RaiseArmCommand raiseArm = new RaiseArmCommand(armWench);
-    private final RaiseArmCommand lowerArm = new RaiseArmCommand(armWench);
+    private final LowerArmCommand lowerArm = new LowerArmCommand(armWench);
+    private final IntakeCommand intakeIntake = new IntakeCommand(intake);
+    private final EjectCommand eject = new EjectCommand(intake);
 
     /**
      * The container for the robot. Contains subsystems, OI devices, and commands.
@@ -70,6 +78,8 @@ public class RobotContainer {
     private void configureButtonBindings() {
         button1.whenHeld(raiseArm);
         button2.whenHeld(lowerArm);
+        button3.whenHeld(intakeIntake);
+        button4.whenHeld(eject);
     }
 
     /**
