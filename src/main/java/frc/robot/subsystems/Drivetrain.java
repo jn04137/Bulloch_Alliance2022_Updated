@@ -19,7 +19,7 @@ public class Drivetrain extends SubsystemBase {
     private final CANSparkMax frontLeft = new CANSparkMax(kDrivetrain.FRONT_LEFT, MotorType.kBrushless);
     private final CANSparkMax frontRight = new CANSparkMax(kDrivetrain.FRONT_RIGHT, MotorType.kBrushless);
     private final CANSparkMax backLeft = new CANSparkMax(kDrivetrain.BACK_LEFT, MotorType.kBrushless);
-    private final CANSparkMax backRight = new CANSparkMax(kDrivetrain.BACK_RIGHT, MotorType.kBrushless);
+    // private final CANSparkMax backRight = new CANSparkMax(kDrivetrain.BACK_RIGHT, MotorType.kBrushless);
 
     private final DifferentialDrive differentialDrive; // This lets us use different ways of controlling the robot.
     // I recommend reading the documentation on the DifferentialDrive object because
@@ -34,7 +34,7 @@ public class Drivetrain extends SubsystemBase {
         // This clears what might have been on the spark maxes
         frontRight.restoreFactoryDefaults();
         frontLeft.restoreFactoryDefaults();
-        backRight.restoreFactoryDefaults();
+        // backRight.restoreFactoryDefaults();
         backLeft.restoreFactoryDefaults();
 
         // You can set this to be either brake or coast mode
@@ -43,24 +43,25 @@ public class Drivetrain extends SubsystemBase {
         frontLeft.setIdleMode(IdleMode.kBrake);
         frontRight.setIdleMode(IdleMode.kBrake);
         backLeft.setIdleMode(IdleMode.kBrake);
-        backRight.setIdleMode(IdleMode.kBrake);
+        // backRight.setIdleMode(IdleMode.kBrake);
 
         // This determines whether the drivetrain should be reversed
-        frontLeft.setInverted(kDrivetrain.REVERSED);
-        frontRight.setInverted(!kDrivetrain.REVERSED);
-        backLeft.setInverted(kDrivetrain.REVERSED);
-        backRight.setInverted(kDrivetrain.REVERSED);
+        frontLeft.setInverted(!kDrivetrain.REVERSED);
+        frontRight.setInverted(kDrivetrain.REVERSED);
+        backLeft.setInverted(!kDrivetrain.REVERSED);
+        // backRight.setInverted(!kDrivetrain.REVERSED);
+
 
         // This lets us command one motor and the other motor will simply follow the
         // other
         backLeft.follow(frontLeft);
-        backRight.follow(backRight);
+        // backRight.follow(backRight);
 
         // This makes all values "stick"
         frontLeft.burnFlash();
         frontRight.burnFlash();
         backLeft.burnFlash();
-        backRight.burnFlash();
+        // backRight.burnFlash();
 
         differentialDrive = new DifferentialDrive(frontLeft, frontRight);
     }

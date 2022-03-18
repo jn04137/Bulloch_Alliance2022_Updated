@@ -24,8 +24,8 @@ public final class Constants {
     public final class kDrivetrain {
         // CAN IDs set from the REV Hardware Client
         public static final int FRONT_LEFT = 1;
-        public static final int FRONT_RIGHT = 2;
-        public static final int BACK_LEFT = 3;
+        public static final int FRONT_RIGHT = 3;
+        public static final int BACK_LEFT = 2;
         public static final int BACK_RIGHT = 4;
 
         // Change this to true if the robot is driving in the wrong direction
@@ -36,15 +36,15 @@ public final class Constants {
     public final class kArmMotor {
         // CAN IDs set from the REV Hardware Client
         public static final int ARM_MOTOR = 5;
-        public static final double RAISE_ARM_SPEED = 0.75;
-        public static final double LOWER_ARM_SPEED = -0.55;
+        public static final double RAISE_ARM_SPEED = 0.65;
+        public static final double LOWER_ARM_SPEED = -0.65;
     }
 
     public final class kIntake {
         // CAN IDs set from the REV Hardware Client
         public static final int INTAKE_MOTOR = 6;
-        public static final double INTAKE_SPEED = -0.35;
-        public static final double EJECT_SPEED = .95;
+        public static final double INTAKE_SPEED = 0.8;
+        public static final double EJECT_SPEED = -0.8;
     }
 
     /**

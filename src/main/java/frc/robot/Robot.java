@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
 // import frc.robot.commands.AutonomousCommand;
 import frc.robot.subsystems.Drivetrain;
 //   import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.Timer;
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
  * each mode, as described in the TimedRobot documentation. If you change the name of this class or
@@ -20,6 +21,8 @@ public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
 
   private RobotContainer m_robotContainer;
+  //Drivetrain drivetrain = new Drivetrain();
+  //Timer m_timer = new Timer();
   Command autodrive;
   
   /**
@@ -61,6 +64,8 @@ public class Robot extends TimedRobot {
   @Override
   public void autonomousInit() {
     m_autonomousCommand = m_robotContainer.getAutonomousCommand();
+   // m_timer.reset();
+   // m_timer.start();
 
     // schedule the autonomous command (example)
     if (m_autonomousCommand != null) {
@@ -71,7 +76,12 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during autonomous. */
   @Override
   public void autonomousPeriodic() {
-   // Scheduler.getInstance().run();
+  //  // Scheduler.getInstance().run();
+  //  if(m_timer.get() < 2.0) {
+  //    drivetrain.drivePercent(0.3, 0.3);
+  //  } else {
+  //    //drivetrain.stop();
+  //  }
   }
 
   @Override
