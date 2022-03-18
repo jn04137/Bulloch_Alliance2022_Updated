@@ -22,6 +22,8 @@ import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.ArmWench;
 import frc.robot.subsystems.Intake;
 
+// import frc.robot.commands.AutonomousCommand;
+
 /**
  * This class is where the bulk of the robot should be declared. Since
  * Command-based is a
@@ -47,6 +49,7 @@ public class RobotContainer {
     private final Drivetrain drivetrain = new Drivetrain();
     private final ArmWench armWench = new ArmWench();
     private final Intake intake = new Intake();
+   // private final AutonomousCommand autoDrive = new AutonomousCommand(drivetrain);
     // Using a method reference to get the Y axis of the joystick.
     // Different from a normal method call because this sends "instructions" on how
     // to get the value, not the value itself.
@@ -80,8 +83,8 @@ public class RobotContainer {
     private void configureButtonBindings() {
         rightTrigger.whenHeld(raiseArm);
         leftTrigger.whenHeld(lowerArm);
-        rightJoystickButton4.whenHeld(eject);
-        leftJoystickButton2.whenHeld(intakeIntake);
+        rightJoystickButton4.whenHeld(intakeIntake);
+        leftJoystickButton2.whenHeld(eject);
         button4.whenHeld(eject);
     }
 
@@ -95,6 +98,8 @@ public class RobotContainer {
 
         // This drives the robot forward at 30% speed for 3 seconds
         return new RunCommand(() -> drivetrain.drivePercent(0.3, 0.3), drivetrain).withTimeout(3)
-                .andThen(drivetrain::stop);
+               .andThen(drivetrain::stop);
+
+        
     }
 }

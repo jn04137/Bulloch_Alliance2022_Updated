@@ -7,7 +7,9 @@ package frc.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
-
+// import frc.robot.commands.AutonomousCommand;
+import frc.robot.subsystems.Drivetrain;
+//   import edu.wpi.first.wpilibj.command.Scheduler;
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
  * each mode, as described in the TimedRobot documentation. If you change the name of this class or
@@ -18,7 +20,8 @@ public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
 
   private RobotContainer m_robotContainer;
-
+  Command autodrive;
+  
   /**
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
@@ -28,6 +31,7 @@ public class Robot extends TimedRobot {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
+    // autodrive = new AutonomousCommand(new Drivetrain());
   }
 
   /**
@@ -60,13 +64,15 @@ public class Robot extends TimedRobot {
 
     // schedule the autonomous command (example)
     if (m_autonomousCommand != null) {
-      m_autonomousCommand.schedule();
+     // autodrive.start();
     }
   }
 
   /** This function is called periodically during autonomous. */
   @Override
-  public void autonomousPeriodic() {}
+  public void autonomousPeriodic() {
+   // Scheduler.getInstance().run();
+  }
 
   @Override
   public void teleopInit() {
