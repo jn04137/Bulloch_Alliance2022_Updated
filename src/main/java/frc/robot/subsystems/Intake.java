@@ -7,13 +7,14 @@ package frc.robot.subsystems;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import com.revrobotics.CANSparkMax;
 
+
 import frc.robot.Constants.kIntake;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Intake extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
-  private final CANSparkMax intakeMotor = new CANSparkMax(kIntake.INTAKE_MOTOR, MotorType.kBrushless);
+  private final CANSparkMax intakeMotor = new CANSparkMax(kIntake.INTAKE_MOTOR, MotorType.kBrushed);
 
   public Intake() {
 
@@ -36,4 +37,9 @@ public class Intake extends SubsystemBase {
   public void eject() {
     intakeMotor.set(kIntake.EJECT_SPEED);
   }
+
+  public void stop() {
+    intakeMotor.set(0);
+  }
+
 }

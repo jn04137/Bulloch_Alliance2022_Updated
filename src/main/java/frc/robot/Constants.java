@@ -36,15 +36,15 @@ public final class Constants {
     public final class kArmMotor {
         // CAN IDs set from the REV Hardware Client
         public static final int ARM_MOTOR = 5;
-        public static final double RAISE_ARM_SPEED = 1;
-        public static final double LOWER_ARM_SPEED = -1;
+        public static final double RAISE_ARM_SPEED = 0.75;
+        public static final double LOWER_ARM_SPEED = -0.55;
     }
 
     public final class kIntake {
         // CAN IDs set from the REV Hardware Client
         public static final int INTAKE_MOTOR = 6;
-        public static final double INTAKE_SPEED = 1;
-        public static final double EJECT_SPEED = -1;
+        public static final double INTAKE_SPEED = -0.35;
+        public static final double EJECT_SPEED = .95;
     }
 
     /**

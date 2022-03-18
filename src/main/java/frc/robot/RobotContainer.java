@@ -36,11 +36,13 @@ public class RobotContainer {
     private final Joystick leftJoy = new Joystick(kIO.LEFT_JOY);
     private final Joystick rightJoy = new Joystick(kIO.RIGHT_JOY);
 
-    private final JoystickButton button1 = new JoystickButton(leftJoy, 1);
+    private final JoystickButton leftTrigger = new JoystickButton(leftJoy, 1);
+    private final JoystickButton rightTrigger = new JoystickButton(rightJoy, 1);
     private final JoystickButton button2 = new JoystickButton(leftJoy, 2);
     private final JoystickButton button3 = new JoystickButton(leftJoy, 3);
     private final JoystickButton button4 = new JoystickButton(leftJoy, 4);
-
+    private final JoystickButton rightJoystickButton4 = new JoystickButton(rightJoy, 4);
+    private final JoystickButton leftJoystickButton2 = new JoystickButton(leftJoy, 2);
     // The robot's subsystems and commands are defined here...
     private final Drivetrain drivetrain = new Drivetrain();
     private final ArmWench armWench = new ArmWench();
@@ -76,9 +78,10 @@ public class RobotContainer {
      * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
      */
     private void configureButtonBindings() {
-        button1.whenHeld(raiseArm);
-        button2.whenHeld(lowerArm);
-        button3.whenHeld(intakeIntake);
+        rightTrigger.whenHeld(raiseArm);
+        leftTrigger.whenHeld(lowerArm);
+        rightJoystickButton4.whenHeld(eject);
+        leftJoystickButton2.whenHeld(intakeIntake);
         button4.whenHeld(eject);
     }
 

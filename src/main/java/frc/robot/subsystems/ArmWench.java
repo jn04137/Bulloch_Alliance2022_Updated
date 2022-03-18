@@ -36,4 +36,8 @@ public class ArmWench extends SubsystemBase {
   public void lowerArm() {
     armMotor.set(kArmMotor.LOWER_ARM_SPEED);
   }
+
+  public void stop() {
+    armMotor.set(0);
+  }
 }
