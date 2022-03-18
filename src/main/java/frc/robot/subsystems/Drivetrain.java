@@ -85,6 +85,9 @@ public class Drivetrain extends SubsystemBase {
         differentialDrive.tankDrive(0, 0);
     }
 
+    public void drive (){
+        differentialDrive.tankDrive(0.3, 0.3);
+    }
     @Override
     public void periodic() {
         // This method will be called once per scheduler run
