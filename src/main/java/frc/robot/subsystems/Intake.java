@@ -14,7 +14,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Intake extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
-  private final CANSparkMax intakeMotor = new CANSparkMax(kIntake.INTAKE_MOTOR, MotorType.kBrushed);
+  // private final CANSparkMax intakeMotor = new CANSparkMax(kIntake.INTAKE_MOTOR, MotorType.kBrushed);
 
   public Intake() {
 
@@ -31,15 +31,15 @@ public class Intake extends SubsystemBase {
   }
 
   public void intake() {
-    intakeMotor.set(kIntake.INTAKE_SPEED);
+    // intakeMotor.set(kIntake.INTAKE_SPEED);
   }
 
   public void eject() {
-    intakeMotor.set(kIntake.EJECT_SPEED);
+    // intakeMotor.set(kIntake.EJECT_SPEED);
   }
 
   public void stop() {
-    intakeMotor.set(0);
+    // intakeMotor.set(0);
   }
 
 }

@@ -13,7 +13,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class ArmWench extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
-  private final CANSparkMax armMotor = new CANSparkMax(kArmMotor.ARM_MOTOR, MotorType.kBrushless);
+  //  final CANSparkMax armMotor = new CANSparkMax(kArmMotor.ARM_MOTOR, MotorType.kBrushless);
 
   public ArmWench() {
 
@@ -30,14 +30,14 @@ public class ArmWench extends SubsystemBase {
   }
 
   public void raiseArm() {
-    armMotor.set(kArmMotor.RAISE_ARM_SPEED);
+    // armMotor.set(kArmMotor.RAISE_ARM_SPEED);
   }
 
   public void lowerArm() {
-    armMotor.set(kArmMotor.LOWER_ARM_SPEED);
+    // armMotor.set(kArmMotor.LOWER_ARM_SPEED);
   }
 
   public void stop() {
-    armMotor.set(0);
+    // armMotor.set(0);
   }
 }

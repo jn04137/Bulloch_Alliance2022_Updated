@@ -46,7 +46,7 @@ public class RobotContainer {
 
     // The robot's subsystems and commands are defined here...
     private final Drivetrain drivetrain = new Drivetrain();
-    private final ArmWench armWench = new ArmWench();
+    // private final ArmWench armWench = new ArmWench();
     private final Intake intake = new Intake();
    // private final AutonomousCommand autoDrive = new AutonomousCommand(drivetrain);
     // Using a method reference to get the Y axis of the joystick.
@@ -54,8 +54,8 @@ public class RobotContainer {
     // to get the value, not the value itself.
     // This is needed to update the command with the joystick's current value.
     private final TankDriveCommand tankDriveCommand = new TankDriveCommand(drivetrain, leftJoy::getY, rightJoy::getY);
-    private final RaiseArmCommand raiseArm = new RaiseArmCommand(armWench);
-    private final LowerArmCommand lowerArm = new LowerArmCommand(armWench);
+    // private final RaiseArmCommand raiseArm = new RaiseArmCommand(armWench);
+    // private final LowerArmCommand lowerArm = new LowerArmCommand(armWench);
     private final IntakeCommand intakeIntake = new IntakeCommand(intake);
     private final EjectCommand eject = new EjectCommand(intake);
 
@@ -80,8 +80,8 @@ public class RobotContainer {
      * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
      */
     private void configureButtonBindings() {
-        rightTrigger.whenHeld(raiseArm);
-        leftTrigger.whenHeld(lowerArm);
+        // rightTrigger.whenHeld(raiseArm);
+        // leftTrigger.whenHeld(lowerArm);
         rightJoystickButton4.whenHeld(intakeIntake);
         leftJoystickButton4.whenHeld(eject);
         button4.whenHeld(eject);  

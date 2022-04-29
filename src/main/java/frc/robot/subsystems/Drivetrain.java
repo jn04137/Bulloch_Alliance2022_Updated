@@ -47,21 +47,22 @@ public class Drivetrain extends SubsystemBase {
 
         // This determines whether the drivetrain should be reversed
         frontLeft.setInverted(!kDrivetrain.REVERSED);
-        frontRight.setInverted(kDrivetrain.REVERSED);
+        frontRight.setInverted(kDrivetrain.REVERSED);  
         backLeft.setInverted(!kDrivetrain.REVERSED);
-        backRight.setInverted(!kDrivetrain.REVERSED);
+        backRight.setInverted(kDrivetrain.REVERSED); 
+        
 
 
         // This lets us command one motor and the other motor will simply follow the
         // other
         backLeft.follow(frontLeft);
-        backRight.follow(backRight);
+        backRight.follow(frontRight);
 
-        // This makes all values "stick"
-        frontLeft.burnFlash();
-        frontRight.burnFlash();
-        backLeft.burnFlash();
-        backRight.burnFlash();
+        // // This makes all values "stick"
+        // frontLeft.burnFlash();
+        // frontRight.burnFlash();
+        // backLeft.burnFlash();
+        // backRight.burnFlash();
 
         differentialDrive = new DifferentialDrive(frontLeft, frontRight);
     }
